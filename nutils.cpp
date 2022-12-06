@@ -7,7 +7,14 @@
 
 using namespace std;
 
-
+/**
+ * Takes a path to a file as input and returns 
+ * a vector of the lines of the file read as a string.
+ *
+ * @param string path
+ *
+ * @return vector<string> result
+*/
 vector<string> getLineList(string path){
 	ifstream file(path);
 	string line;

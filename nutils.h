@@ -34,6 +34,17 @@ T runStateFunction(T base, function<T(T, string)> f, vector<string> slist){
 	return base;
 }
 
+
+/**
+ * Takes two arguments any type that is capable of the modulo-operator (%) and 
+ * gives back the mathematically complete Modulo result a mod b.
+ * If the type is not capable of the %-operator, it will simply return a.
+ *
+ * @param T a
+ * @param T b
+ *
+ * @return T result
+ */
 template<typename T>
 T modulo(T a, T b) {
 	try {
@@ -45,6 +56,16 @@ T modulo(T a, T b) {
 	}
 }
 
+/**
+ * Takes two vectors with the common element type T, and returns
+ * a vector with common elements. This method is not optimized and 
+ * does not remove duplicate commons.
+ *
+ * @param vector<T> v1
+ * @param vector<T> v2
+ *
+ * @result vector<T> result
+ */
 template<typename T>
 vector<T> getIntersect(vector<T> v1, vector<T> v2){
 	vector<T> result;
@@ -56,16 +77,29 @@ vector<T> getIntersect(vector<T> v1, vector<T> v2){
 	return result;	
 }
 
-
+/**
+ * Takes a vector of the element type T and tries to print out 
+ * its elements. If the element type does not support a cast to 
+ * string, this method will fail.
+ *
+ * @param vector<T> v
+ */
 template<typename T>
 void printVector(vector<T> v){
 	for(T t:v){
-		cout << t << ", ";
+		cout << static_cast<string>(t) << ", ";
 	}
 	cout << endl;
 }
 
-
+/**
+ * Takes a vector of the element type T and converts it to 
+ * a set of type T.
+ *
+ * @param vecto<T> v
+ *
+ * @return set<T> result
+*/
 template<typename T>
 set<T> vecToSet(vector<T> v){
 	set<T> result;
@@ -75,6 +109,16 @@ set<T> vecToSet(vector<T> v){
 	return result;
 }
 
+/*
+ * Takes one iterable type V with element type E and returns 
+ * if it has duplicate elements. Returns true if there is such
+ * element, else false. Returns also true if the method fails for some 
+ * reason.
+ *
+ * @param V<E> a 
+ *
+ * @return bool result
+*/
 template<typename V, typename E>
 bool existsDupl(V v){
 	try {
