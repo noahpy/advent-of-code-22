@@ -1,9 +1,11 @@
 
- ## Advent of Code 2022
+ ## Noah's Advent of Code 2022 Solutions
 
 The most beautiful season of the year is back again...
 What else fits this better than solving puzzles every day?
 Check them out [here](https://adventofcode.com/)!
+
+![](images/advent.jpg)
 
  #### My Apporach
  Last year, I tried this challenge using Python. But this time, I want to challenge myself by using my fresh knowledge in C++ :) I love this language, hoping to get better at it!
