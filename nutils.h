@@ -8,6 +8,7 @@
 #include <iostream>
 #include <set>
 #include <map>
+#include <list>
 
 
 using namespace std;
@@ -138,4 +139,8 @@ bool existsDupl(V v){
 	}
 }
 
+
+list<string> getLineListReally(string path);
+
+void runLines(function<void(list<string>)> f, function<pair<list<string>, list<string>>(list<string>)> getNextLines, list<string> lines);
 

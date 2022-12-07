@@ -1,9 +1,12 @@
 
+#include <utility>
 #include <vector>
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <functional>
+#include <list>
+#include <iostream>
 
 using namespace std;
 
@@ -23,6 +26,37 @@ vector<string> getLineList(string path){
 		result.push_back(line);
 	}
 	return result; 
+}
+
+
+list<string> getLineListReally(string path){
+	ifstream file(path);
+	string line;
+	list<std::string> result;
+	while(getline(file, line)){
+		result.push_back(line);
+	}
+	return result; 
+}
+
+
+
+
+void runLines(function<void(list<string>)> f, function<pair<list<string>, list<string>>(list<string>)> getNextLines, list<string> lines){
+	list<string> nextLines;
+	pair<list<string>, list<string>> p = getNextLines(lines);
+	nextLines = p.first;
+	lines = p.second;
+	while (1) {
+		f(nextLines);	
+		pair<list<string>, list<string>> p = getNextLines(lines);
+		nextLines = p.first;
+		lines = p.second;
+		if(lines.empty()){
+			f(nextLines);
+			break;
+		}
+	}
 }
 
 
