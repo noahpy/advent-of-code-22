@@ -9,13 +9,6 @@
 
 using namespace std;
 
-pair<list<string>, list<string>> getNextLine(list<string> lines){
-	list<string> line{lines.front()};
-	lines.pop_front();
-	return make_pair(line, lines);
-}
-
-
 map<pair<int, int>, int> posmap;	
 pair<int, int> hpos, tpos;
 int solution1 = 0;
