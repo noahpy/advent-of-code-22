@@ -61,6 +61,15 @@ void runLines(function<void(list<string>)> f, function<pair<list<string>, list<s
 
 
 
+pair<list<string>, list<string>> getNextLine(list<string> lines){
+	list<string> line{lines.front()};
+	lines.pop_front();
+	return make_pair(line, lines);
+}
+
+
+
+
 
 
 
