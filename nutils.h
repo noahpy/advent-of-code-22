@@ -144,5 +144,4 @@ list<string> getLineListReally(string path);
 
 void runLines(function<void(list<string>)> f, function<pair<list<string>, list<string>>(list<string>)> getNextLines, list<string> lines);
 
-
 pair<list<string>, list<string>> getNextLine(list<string> lines);
